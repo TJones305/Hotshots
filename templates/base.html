@@ -44,7 +44,7 @@
             <h2 class="text-rose my-0">H<i class="fas fa-dot-circle text-red"></i>tsh<i class="fas fa-dot-circle text-red"></i>ts</h2></a>
         </div>
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-          <form action="" method="get">
+          <form action="" method="GET">
             <div class="input-group w-100">
               <input type="text" class="form-control border border-black bg-rose text-red rounded-0" name="q" placeholder="Search Hotshots">
               <div class="input-group-append">
@@ -94,6 +94,15 @@
               </a>
           </ul>
         </div>
+      </div>
+      <div class="row bg-darkred">
+        <nav class="navbar navbar-expanded-lg navbar-light w-100">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          {% include 'includes/mobile-header.html' %}
+          {% include 'includes/main-nav.html' %}
+        </nav>
       </div>
     </header>
     {% if messages %}
