@@ -1,0 +1,114 @@
+html {
+    height: 100%
+}
+
+body {
+    background: url('/media/bowls_green.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    font-family: 'Pontano Sans', sans-serif;
+}
+
+.bg-darkred {
+    background: #3b0d11;
+}
+
+.bg-rose {
+    background: #ffe3de;
+}
+
+underlay {
+    position:fixed;
+    z-index: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content:center;
+    height:1.5rem;
+    width:1.5rem;
+}
+
+.logo-font {
+    text-transform: uppercase;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.main-logo-link {
+    width: fit-content;
+    font-family: 'Cinzel Decorative', cursive;
+    size: 60px;
+}
+
+.shop-now-btn {
+    background: #d7263d;
+    color: #ffe3de;
+    min-width: 260px;
+}
+
+.btn-red {
+    background: #d7263d;
+    color: #3a2d32;
+}
+
+.btn-rose {
+    background: #ffe3de;
+    color:#d7263d;
+}
+
+.shop-now-btn:hover,
+.shop-now-btn:active,
+.shop-now-btn:focus,
+.btn-red:hover,
+.btn-red:active,
+.btn-red:focus {
+    background: #ffe3de;
+    color:#3a2d32;
+}
+
+.btn-rose:hover,
+.btn-rose:active,
+.btn-rose:focus {
+    background: #3a2d32;;
+    color:#ffe3de;
+}
+
+.text-black {
+    color:#3a2d32 !important;
+}
+
+.text-red {
+    color:#d7263d !important;
+}
+
+.text-rose {
+    color:#dbb4ad !important;
+}
+
+.border-black {
+    border: 1px solid #3a2d32 !important;
+}
+
+/*---------- Media Queries --------*/
+@media (min-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
+}
+
+@media (min-width: 992px) {
+    .fixed-top-desk-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
