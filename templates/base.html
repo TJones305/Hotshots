@@ -7,7 +7,7 @@
     {% block meta %}
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% endblock %}
 
     {% block extra_meta %}
@@ -64,24 +64,24 @@
               <a href="#" class="text-rose nav-link" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="text-center">
                   <div><i class="fas fa-user fa-lg"></i></div>
-                  <p class="my-0">My Account</p>
+                  <p class="my-0 text-uppercase">My Account</p>
                 </div>
               </a>
-              <div class="dropdown-menu border-0" aria-labelledby="user-options">
+              <div class="dropdown-menu border-0 bg-rose" aria-labelledby="user-options">
                 {%if request.user.is_authticated %}
                   {% if request.user.is_superuser %}
-                    <a href="#" class="dropdown-item">Manage Products</a>
+                    <a href="#" class="dropdown-item text-red">Manage Products</a>
                   {% endif %}
-                  <a href="" class="dropdown-item">My Profile</a>
-                  <a href="{% url 'account_logout' %}" class="dropdown-item">Sign Out</a>
+                  <a href="" class="dropdown-item text-red">My Profile</a>
+                  <a href="{% url 'account_logout' %}" class="dropdown-item text-red">Sign Out</a>
                 {% else %}
-                <a href="{% url 'account_signup' %}" class="dropdown-item">Create Account</a>
-                <a href="{% url 'account_login' %}" class="dropdown-item">Sign In</a>
+                <a href="{% url 'account_signup' %}" class="dropdown-item text-red">Create Account</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item text-red">Sign In</a>
                 {% endif %}
               </div>
             </li>
             <li class="list-inline-item">
-              <a href="#" class="{% if grand_total %} text-info font-weight-bold {% else %} text-rose {% endif %} nav-link">
+              <a href="#" class="{% if grand_total %} text-rose font-weight-bold {% else %} text-rose {% endif %} nav-link">
                 <div class="text-center">
                   <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                   <p class="my-0">
@@ -97,15 +97,20 @@
           </ul>
         </div>
       </div>
-      <div class="row bg-darkred">
+      <div class="row bg-rose">
         <nav class="navbar navbar-expand-lg navbar-light w-100">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon bg-rose"></span>
+            <span class="navbar-toggler-icon bg-red"></span>
           </button>
-          {% include 'includes/main-nav.html' %}
           {% include 'includes/mobile-header.html' %}
+          {% include 'includes/main-nav.html' %}
         </nav>
       </div>
+      <div id="delivery-banner" class="row text-center">
+        <div class="col bg-darkred text-rose text-capitalize ">
+          <h4 class="my-1">Free Delivery on orders worth £{{ free_shipping_threshold }}!</h4>
+        </div>
+    </div>
     </header>
     {% if messages %}
     <div class="message-container"></div>

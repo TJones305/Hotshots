@@ -13,15 +13,22 @@ body {
     background: #3b0d11;
 }
 
+.bg-red {
+    background: #d7263d;
+}
+
 .bg-rose {
     background: #ffe3de;
 }
 
-underlay {
-    position:fixed;
-    z-index: 0;
+.bg-black {
+    background: #3a2d32;
+}
+
+.shadow {
     background-color: rgba(0,0,0,0.5);
 }
+
 
 /* from Bulma */
 .icon {
@@ -34,7 +41,6 @@ underlay {
 
 .logo-font {
     text-transform: uppercase;
-    background-color: rgba(0,0,0,0.7);
 }
 
 .main-logo-link {
@@ -78,6 +84,10 @@ underlay {
 
 .text-black {
     color:#3a2d32 !important;
+}
+
+.text-darkred {
+    background: #3b0d11 !important;
 }
 
 .text-red {
