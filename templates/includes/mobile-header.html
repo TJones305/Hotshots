@@ -1,23 +1,23 @@
-<ul>
+<ul>  
     <li class="list-inline-item">
-        <a href="#" class="text-red nav-link d-block d-lg-none" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a href="#" class="text-rose nav-link d-block d-lg-none" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="text-center">
                 <div><i class="fas fa-search fa-lg"></i></div>
                 <p class="my-0">Search</p>
             </div>
         </a>
         <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
-        <form class="form" action="" method="GET">
-            <div class="input-group w-100">
-                <input type="text" class="form-control border border-black bg-rose text-red rounded-0" name="q" placeholder="Search Hotshots">
-                <div class="input-group-append">
-                <button class="form-control btn btn-rose border border-black rounded" type="submit">
-                    <span class="icon">
-                    <i class="fas fa-search"></i>
-                    </span>
-                </button>
+            <form class="form" action="" method="GET">
+                <div class="input-group w-100">
+                    <input type="text" class="form-control border border-black bg-rose text-red rounded-0" name="q" placeholder="Search Hotshots">
+                    <div class="input-group-append">
+                        <button class="form-control btn btn-rose border border-black rounded" type="submit">
+                            <span class="icon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </button>
+                    </div>
                 </div>
-            </div>
             </form>
         </div>
     </li>
@@ -41,8 +41,8 @@
                 {% endif %}
         </div>
     </li>
-        <li class="list-inline-item"></li>
-            <a href="#" class="{% if grand_total %} text-info font-weight-bold {% else %} text-rose {% endif %} nav-link d-block d-md-none">
+    <li class="list-inline-item">
+        <a href="#" class="{% if grand_total %} text-rose font-weight-bold {% else %} text-rose {% endif %} nav-link d-block d-lg-none">
             <div class="text-center">
                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                 <p class="my-0">
@@ -53,5 +53,6 @@
                 {% endif %}
                 </p>
             </div>
-            </a>
+        </a>
+    </li>
 </ul>
