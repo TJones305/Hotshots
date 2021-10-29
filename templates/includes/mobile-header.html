@@ -1,11 +1,11 @@
     <li class="list-inline-item">
-        <a href="#" class="text-rose nav-link d-block d-lg-none" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a href="#" class="text-darkred nav-link d-block d-lg-none" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="text-center">
                 <div><i class="fas fa-search"></i></div>
                 <p class="my-0">Search</p>
             </div>
         </a>
-        <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
+        <div class="dropdown-menu bg-darkred border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
             <form class="form" action="" method="GET">
                 <div class="input-group w-100">
                     <input type="text" class="form-control border border-black bg-rose text-red rounded-0" name="q" placeholder="Search Hotshots">
@@ -20,28 +20,28 @@
             </form>
         </div>
     </li>
-    <li class="list-inline-item dropdown">
-        <a href="#" class="text-red nav-link d-block d-lg-none" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <li class="list-inline-item dropdown text-red">
+        <a href="#" class="text-darkred nav-link d-block d-lg-none" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="text-center">
                 <div><i class="fas fa-user"></i></div>
                 <p class="my-0">My Account</p>
             </div>
         </a>
-        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+        <div class="dropdown-menu bg-rose border-0" aria-labelledby="user-options">
                 {%if request.user.is_authticated %}
                     {% if request.user.is_superuser %}
-                    <a href="{% url 'account_logout' %}" class="dropdown-item text-red">Manage Products</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item text-red font-weight-bold">Manage Products</a>
                     {% endif %}
                     <a href="" class="dropdown-item">My Profile</a>
-                    <a href="{% url 'account_logout' %}" class="dropdown-item text-red">Sign Out</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item text-redfont-weight-bold">Sign Out</a>
                 {% else %}
-                <a href="{% url 'account_signup' %}" class="dropdown-item text-red">Create Account</a>
-                <a href="{% url 'account_login' %}" class="dropdown-item text-red">Sign In</a>
+                <a href="{% url 'account_signup' %}" class="dropdown-item text-red font-weight-bold">Create Account</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item text-red font-weight-bold">Sign In</a>
                 {% endif %}
         </div>
     </li>
     <li class="list-inline-item">
-        <a href="#" class="{% if grand_total %} text-rose font-weight-bold {% else %} text-rose {% endif %} nav-link d-block d-lg-none">
+        <a href="#" class="{% if grand_total %} text-darkred font-weight-bold {% else %} text-darkred {% endif %} nav-link d-block d-lg-none">
             <div class="text-center">
                 <div><i class="fas fa-shopping-bag"></i></div>
                 <p class="my-0">
@@ -54,3 +54,4 @@
             </div>
         </a>
     </li>
+  
