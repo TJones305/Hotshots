@@ -100,9 +100,15 @@ hr {
 .btn-rose:focus,
 .dropdown-item:hover,
 .dropdown-item:active,
-.dropdown-item:focus {
-    background: #3a2d32;;
+.dropdown-item:focus  {
+    background: #3a2d32 !important;
     color:#ffe3de !important;
+}
+
+a.category-badge > span.badge:hover  {
+    background: #3b0d11 !important;
+    color:#ffe3de !important;
+
 }
 
 .text-black {
