@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="bg-red">
+    <div class="container-fluid mt-2">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-1">
+                <div class="image-container">
+                        {% if product.image %}
+                        <a href=" {{ product.image.url }}" target="_blank">
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
+                        </a>
+                        {% else %}
+                        <a href="">
+                            <img src="{{ MEDIA_URL }}noimag.png" alt="{{ product.name }}" class="card-img-top img-fluid">
+                        </a>
+                        {% endif %}
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 text-center mt-5 pt-6">
+                <div class="product-details-container font-weight-bold shadow">
+                    <p class="mb-0 text-center text-rose text-uppercase font-weight-bold">{{ product.name }}</p>
+                        <div class="text-darkred font-weight-bold bg-rose">
+                        <p class="lead mb-0 font-weight-bold">£{{ product.price }}</p>
+                        <p class="mt-2">{{ product.description }}</p>
+                        {% if product.rating %}
+                            <small class="text-muted text-rose"><i class="fas fa-star mr-1"></i>{{ product.rating }}</small>
+                        {% else %}
+                            <small class="text-muted text-rose">No Rating</small>
+                        {%endif  %}
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    {% endblock %}

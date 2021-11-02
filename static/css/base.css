@@ -9,6 +9,10 @@ body {
     font-family: 'Pontano Sans', sans-serif;
 }
 
+hr {
+    border-top: 3px solid rgba(0,0,0,.7) !important;
+}
+
 .bg-darkred {
     background: #3b0d11;
 }
@@ -32,7 +36,6 @@ body {
     left:0;
     position: fixed;
     background:#d7263d;
-    z-index: 1;
 }
 
 .shadow {
@@ -56,7 +59,8 @@ body {
 .main-logo-link {
     width: fit-content;
     font-family: 'Cinzel Decorative', cursive;
-    size: 60px;
+    size: 70px;
+    margin: 0px 5px;
 }
 
 .shop-now-btn {
@@ -73,6 +77,12 @@ body {
 .btn-rose {
     background: #ffe3de;
     color:#d7263d;
+}
+
+.list-inline-item:hover,
+.list-inline-item:focus,
+.list-inline-item:active {
+    color:#d7263d
 }
 
 .shop-now-btn:hover,
@@ -120,6 +130,10 @@ body {
     border-style: solid 3px;
 }
 
+.pt-6 {
+    padding-top: 7.5%;
+}
+
 /*---------- Media Queries --------*/
 @media (min-width: 1200px) {
     .container {
@@ -138,5 +152,17 @@ body {
 
     .header-container {
         padding-top: 164px;
+    }
+}
+
+
+@media (min-width: 991px) {
+
+    .header-container {
+        padding-top: 200px;
+    }
+
+    body {
+        height:calc(100vh -200px);
     }
 }
