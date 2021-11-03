@@ -15,40 +15,65 @@
     <div class="container-fluid mt-2">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4 offset-lg-1">
-                <div class="image-container">
-                        {% if product.image %}
-                        <a href=" {{ product.image.url }}" target="_blank">
-                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
-                        </a>
-                        {% else %}
-                        <a href="">
-                            <img src="{{ MEDIA_URL }}noimag.png" alt="{{ product.name }}" class="card-img-top img-fluid">
-                        </a>
-                        {% endif %}
+                <div class="image-container mt-2">
+                    {% if product.image %}
+                    <a href=" {{ product.image.url }}" target="_blank">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
+                    </a>
+                    {% else %}
+                    <a href="">
+                        <img src="{{ MEDIA_URL }}noimag.png" alt="{{ product.name }}" class="card-img-top img-fluid">
+                    </a>
+                    {% endif %}
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 text-center mt-5 pt-6">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 text-center mt-5 mr-5">
                 <div class="product-details-container font-weight-bold shadow">
                     <p class="mb-0 text-center text-rose text-uppercase font-weight-bold">{{ product.name }}</p>
-                        <div class="text-darkred font-weight-bold bg-rose">
-                        <p class="lead mb-0 font-weight-bold">£{{ product.price }}</p>
+                    <div class="text-darkred font-weight-bold bg-rose">
+                        <p class="lead mb-0 font-weight-bold mt-2">£{{ product.price }}</p>
                         {% if product.category %}
-                            <p class="small mt-1 mb-0">
-                                <a href="{% url'products' %}?category={{ product.category.name }}" class="text-muted text-red text-capitalize font-weight-bold">
-                                    <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
-                                </a>
-                            </p>
-                        {% endif  %}
-                        <p class="mt-2">{{ product.description }}</p>
+                        <p class="small mt-1 mb-1">
+                            <a href="{% url 'products' %}?category={{ product.category.name }}"
+                                class="text-muted text-red text-capitalize font-weight-bold">
+                                <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                            </a>
+                        </p>
+                        {% endif %}
+                        <p class="mt-2 text-left ml-3 mr-3">{{ product.description }}</p>
                         {% if product.rating %}
-                            <small class="text-muted text-rose"><i class="fas fa-star mr-1"></i>{{ product.rating }}</small>
+                        <small class="text-muted text-red font-weight-bold">Rating: <i class="fas fa-star mr-1"></i>{{ product.rating }}</small>
                         {% else %}
-                            <small class="text-muted text-rose">No Rating</small>
-                        {% endif  %}
-                        </div>
+                        <small class="text-muted text-red font-weight-bold">No Current Rating</small>
+                        {% endif %}
+                        <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                            {% csrf_token %}
+                            <div class="form-row bg-darkred">
+                                <div class="col-12">
+                                    <p class="mt-2 text-rose text-uppercase font-weight-bold stlyed"><strong><u>Quantity</u></strong></p>
+                                    <div class="form-group w-50 ml-5">
+                                        <div class="input-group ml-5 pl-4">
+                                            <input type="number" class="form-control qty_input text-center bg-rose text-black font-weight-bold" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty{{ product_id }}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="text-black"><i class="fas fa-plus-circle fa-lg mr-1"></i><input type="submit" class="btn btn-black font-weight-bold rounded-0 text.uppercase mt-2 mb-2" value="Add to Bag"></div>
+                                <a href="{% url 'products' %}" class="btn btn-darkred font-weight-bold rounded-0 mt-2 mb-2">
+                                    <span class="icon">
+                                        <i class=" fas fa-chevron-left"></i>
+                                    </span>
+                                    <span> <i class="fas fa-shopping-cart mr-2"></i> Keep Shopping</span>
+                                </a>                         
+                            </div>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-    {% endblock %}
+{% endblock %}

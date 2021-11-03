@@ -39,7 +39,7 @@ hr {
 }
 
 .shadow {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.6);
 }
 
 
@@ -74,9 +74,19 @@ hr {
     color: #ffeae7 !important;
 }
 
+.btn-darkred {
+    background: #3b0d11 !important;
+    color: #ffeae7 !important;
+}
+
 .btn-rose {
     background: #ffe3de;
     color:#d7263d;
+}
+
+.btn-black {
+    background: #3a2d32 !important;
+    color:#ffe3de !important;
 }
 
 .list-inline-item:hover,
@@ -137,7 +147,7 @@ a.category-badge > span.badge:hover  {
 }
 
 .pt-6 {
-    padding-top: 7.5%;
+    padding-top: 6%;
 }
 
 .btt-button {

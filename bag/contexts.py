@@ -9,7 +9,7 @@ def bag_contents(request):
     product_count = 0
 
     if total < settings.FREE_SHIPPING_THRESHOLD:
-        delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE/100)
+        delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
         free_shipping_delta = settings.FREE_SHIPPING_THRESHOLD - total
     else:
         delivery = 0
@@ -23,7 +23,7 @@ def bag_contents(request):
         'product_count': product_count,
         'delivery': delivery,
         'free_shipping_delta': free_shipping_delta,
-        'free_shippping_threshold': settings.FREE_SHIPPING_THRESHOLD,
+        'free_shipping_threshold': settings.FREE_SHIPPING_THRESHOLD,
         'grand_total': grand_total,
     }
 
