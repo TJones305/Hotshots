@@ -140,6 +140,20 @@ a.category-badge > span.badge:hover  {
     padding-top: 7.5%;
 }
 
+.btt-button {
+    height: 35px !important;
+    width: 35px !important;
+    position: fixed;
+    bottom: 15px;
+    right: 10px;
+}
+
+.btt-link {
+    cursor: pointer;
+    height: 35px !important;
+    width: 35px !important;
+}
+
 /*---------- Media Queries --------*/
 @media (min-width: 1200px) {
     .container {
