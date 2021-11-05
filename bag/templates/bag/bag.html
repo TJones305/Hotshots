@@ -24,7 +24,9 @@
             <div class="row bg-black text-center">
                 <div class="col text-rose text-uppercase mt-5">
                     {% if bag_items %}
-                        <div class="table-responsive rounded"></div>
+                        <div class="table-responsive rounded">
+                            {{ bag_items }}
+                        </div>
                     {% else %}
                         <p class="lead mb-5 text-capitalize"><i class="far fa-frown fa-lg"></i> - You haven't added any items to your basket yet!</p>
                         <a href="{% url 'products'%}" class="btn btn-outline-black btn-red rounded-0 btn-lg mb-3">
