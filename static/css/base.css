@@ -105,6 +105,13 @@ hr {
     color:#3a2d32 !important;
 }
 
+.btn-darkred:hover,
+.btn-darkred:active,
+.btn-darkred:focus {
+    background: #ffe3de !important;
+    color:#d7263d !important;
+}
+
 .btn-rose:hover,
 .btn-rose:active,
 .btn-rose:focus,

@@ -28,18 +28,18 @@
                             <table class="table table-sm table-borderless text-rose">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Product Info</th>
-                                        <th scope="col"></th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col">Quantity</th>
-                                        <th scope="col">Gross Total</th>
+                                        <th scope="col"><u>Product Image</u></th>
+                                        <th scope="col"><u>Product Info</u></th>
+                                        <th scope="col"><u>Price</u></th>
+                                        <th scope="col"><u>Quantity</u></th>
+                                        <th scope="col"><u>Gross Total</u></th>
                                     </tr>
                                 </thead>
 
                                 {% for item in bag_items %}
-                                    <tr>
-                                        <td class="p-4 w-25 h-2">
-                                            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid rounded">
+                                    <tr class="bg-rose mt-3 text-darkred">
+                                        <td class="p-4 w-25">
+                                            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid img-thumbnail">
                                         </td>
                                         <td class="py-3">
                                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
@@ -76,7 +76,7 @@
                                             </span>
                                             <span class="text-uppercase"> Keep Shopping ? !</span>
                                         </a>
-                                        <a href="{% url 'products' %}" class="btn btn-outline btn-rose rounded-0 btn lg">
+                                        <a href="{% url 'products' %}" class="btn btn-outline btn-darkred font-weight-bold rounded-0 btn lg">
                                             <span class="icon">
                                                 <i class="fas fa-cash-register"></i>
                                             </span>
