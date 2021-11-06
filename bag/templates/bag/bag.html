@@ -37,12 +37,13 @@
                                 </thead>
 
                                 {% for item in bag_items %}
-                                    <tr class="bg-rose mt-3 text-darkred">
+                                    <tr class="bg-rose mt-3 text-darkred font-weight-bold">
                                         <td class="p-4 w-25">
                                             <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid img-thumbnail">
                                         </td>
                                         <td class="py-3">
-                                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                            <p class="my-0">{{ item.product.name }}</p>
+                                            <p class="my-0">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
                                             <p class="my-0 small text-muted text-red">SKU: {{ item.product.sku|upper }}</p>
                                         </td>   
                                         <td class="py-3">
