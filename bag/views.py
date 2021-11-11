@@ -76,7 +76,6 @@ def remove_bag_item(request, item_id):
             del bag[item_id]['items_by_size'][size]
             if not bag[item_id]['items_by_size']:
                 bag.pop(item_id)
-
         else:
             bag.pop(item_id)
 
