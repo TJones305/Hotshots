@@ -171,6 +171,27 @@ a.category-badge > span.badge:hover  {
     cursor: pointer;
 }
 
+.message-container {
+    position: fixed;
+    top: 75px;
+    right:15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper{
+    height: 5px;
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 /*---------- Media Queries --------*/
 @media (min-width: 1200px) {
     .container {
