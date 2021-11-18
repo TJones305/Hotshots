@@ -21,7 +21,7 @@
     box-shadow: 0px 0px 0px 0.5px rgba(71, 3, 3, 0.863),
       0px 2px 5px 0px rgba(97, 7, 7, 0.37), 0px 1px 1.5px 0px rgba(71, 3, 3, 0.863);
     border-radius: 0px;
-    padding: 10px;
+    padding: 20px;
   }
 
   .hidden {
@@ -43,9 +43,9 @@
   /* Buttons and links */
   button,
   .stripe-style-input {
-    background: #5469d4;
+    background: #fff;
     font-family: Arial, sans-serif;
-    color: #ffffff;
+    color: #3b0d11;
     border-radius: 4px;
     border: 0;
     padding: 12px 16px;
