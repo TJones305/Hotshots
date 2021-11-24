@@ -4,6 +4,16 @@
     border: 1px solid #000;
   }
 
+  select,
+  select option {
+    color:#000;
+  }
+
+  select:invalid,
+  select option[value=""] {
+    color:#aab7c4;
+  }
+
   #loading-overlay {
     display: none;
     position: fixed;
@@ -67,7 +77,8 @@
     color: #3b0d11;
     border-radius: 4px;
     border: 0;
-    padding: 12px 16px;
+    padding: 10px 16px;
+    margin: 5px 2px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
