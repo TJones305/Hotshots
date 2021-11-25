@@ -14,7 +14,7 @@
                 <hr class="mt-2 mb-2">
             </div>
         </div>
-        {% if grand_total %}
+        {% if grand_total and not on_profile_page %}
             <p class="logo-font bg-rose text-darkred text-uppercase font-weight-bold py-1"> Your Basket ({{ product_count }})</p>
             <div class="bag-notification-wrapper">
                 {% for item in bag_items %}
