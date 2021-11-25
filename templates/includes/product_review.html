@@ -1,0 +1,25 @@
+<div class="bg-rose">
+    <div class="text-black">
+        {% if user.is_authenticated %}
+        <div class="row">
+            <!--Blank form for authenticated users-->
+            <div class="col"></div>
+        </div>
+        {% endif %}
+        <div class="row">
+            <!--Display reviews about chosen product-->
+            <div class="col">
+                <div class="card-top text-darkred">
+                    <h3>{{ review.review_title }}</h3>
+                    <p class="text-muted text-darkred"> by: {{ review.user }} on {{ review.date }}</p>
+                </div>
+                <div class="card-body text-black">
+                    {{ review.review_description }}
+                </div>
+                <div class="card-bottom text-darkred">
+                    {{ review.review_rating }}
+                </div>
+            </div>
+        </div>
+    </div>
+<div>

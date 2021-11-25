@@ -7,7 +7,7 @@ from .forms import ReviewForm
 
 
 def reviews(request):
-    """ A view dispalying reviews for the chosen product """
+    """ A view displaying reviews for the chosen product """
     # currently all reviews displaying
     reviews = UserReview.objects.all()
 
