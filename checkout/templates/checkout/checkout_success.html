@@ -206,12 +206,21 @@
 
         <div class="row">
 			<div class="col-12 col-lg-8 text-right">
-				<a href="{% url 'products' %}" class="btn btn-red rounded-0 my-2">
-					<span class="icon">
-						<i class="fas fa-shopping-cart"></i>
-					</span>
-					<span class="text-uppercase font-weight-bold">Continue To Browse</span>
-				</a>
+                {% if from_profile %}
+                    <a href="{% url 'products' %}" class="btn btn-red rounded-0 my-2">
+                        <span class="icon">
+                            <i class="fas fa-user"></i>
+                        </span>
+                        <span class="text-uppercase font-weight-bold">Back to Profile</span>
+                    </a>
+                {% else %}
+                    <a href="{% url 'products' %}" class="btn btn-red rounded-0 my-2">
+                        <span class="icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                        <span class="text-uppercase font-weight-bold">Continue To Browse</span>
+                    </a>
+                {% endif %}
 			</div>
 		</div>
     </div>
