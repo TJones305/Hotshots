@@ -1,0 +1,24 @@
+Hello {{ order.full_name }}!
+
+This is confirmation of your order at Hotshots. Please find order information for your requested items below:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Gross Total: £{{ order.order_total }}
+Delivery Total: £{{ order.delivery }}
+Net Total: £{{ order.grand_total }}
+
+Your requested items will be delivery to {{ order.street_address1 }}, {{ order.town_or_city }}, {{ order.county }}.
+
+Our records state {{ order.phone_number }} is your phone number. 
+
+If this is not correct, and you are signed up,, then please update your profile details. 
+
+Otherwise please contact us at the email below for any other issues or requests.
+
+{{ contact_email }}
+
+Kind Regards,
+
+Hotshots
