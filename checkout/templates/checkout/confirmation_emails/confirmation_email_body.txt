@@ -5,17 +5,17 @@ This is confirmation of your order at Hotshots. Please find order information fo
 Order Number: {{ order.order_number }}
 Order Date: {{ order.date }}
 
-Gross Total: £{{ order.order_total }}
-Delivery Total: £{{ order.delivery }}
-Net Total: £{{ order.grand_total }}
+Gross Total: £{{ order.order_total | floatformat:2 }}
+Delivery Total: £{{ order.delivery_cost | floatformat:2 }}
+Net Total: £{{ order.grand_total | floatformat:2 }}
 
 Your requested items will be delivery to {{ order.street_address1 }}, {{ order.town_or_city }}, {{ order.county }}.
 
 Our records state {{ order.phone_number }} is your phone number. 
 
-If this is not correct, and you are signed up,, then please update your profile details. 
+If this is not correct, and you are signed up, then please update your profile details. 
 
-Otherwise please contact us at the email below for any other issues or requests.
+Otherwise please contact us at the email below for any other issues or requests:
 
 {{ contact_email }}
 
