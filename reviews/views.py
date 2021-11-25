@@ -1,28 +1,84 @@
-from .models import Post
-from .forms import CommentForm
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+
+from .models import UserReview
+from .forms import ReviewForm
 
 
-def post_detail(request, slug):
-    template_name = 'post_detail.html'
-    post = get_object_or_404(Post, slug=slug)
-    comments = post.comments.filter(active=True)
-    new_comment = None
-    # Comment posted
-    if request.method == 'POST':
-        comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid():
+def reviews(request):
+    """ A view dispalying reviews for the chosen product """
+    # currently all reviews displaying
+    reviews = UserReview.objects.all()
 
-            # Create Comment object but don't save to database yet
-            new_comment = comment_form.save(commit=False)
-            # Assign the current post to the comment
-            new_comment.post = post
-            # Save the comment to the database
-            new_comment.save()
+    template = 'reviews/reviews.html'
+    context = {
+        'reviews': reviews,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def add_review(request):
+    """Enables register user to add a review"""
+    if request.method == "POST":
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,
+                             'Your feedback is important, Thanks!')
+
+            return redirect(reverse('reviews',))
+        else:
+            messages.error(request, 'Oh no! There was an error.\
+                           Please check the form is valid and resubmit')
     else:
-        comment_form = CommentForm()
+        form = ReviewForm()
 
-    return render(request, template_name, {'post': post,
-                                           'comments': comments,
-                                           'new_comment': new_comment,
-                                           'comment_form': comment_form})
+    form = ReviewForm()
+    template = 'reviews/add_review.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def edit_review(request):
+    """Enables register user to edit a review"""
+    review = get_object_or_404(UserReview,
+                               pk=review_id)
+    if request.method == "POST":
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request,
+                             'Review has been edited')
+
+            return redirect(reverse('reviews',))
+        else:
+            messages.error(request, 'Oh no! There was an error.\
+                            Please check the form is valid and resubmit')
+    else:
+        form = ReviewForm()
+
+    form = ReviewForm(instance=review)
+    template = 'reviews/edit_review.html'
+    context = {
+        'form': form,
+        'review': review,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_review(request):
+    """Enables register user to delete a review"""
+    review = get_object_or_404(UserReview, pk=review_id)
+    review.delete()
+    messages.success(request, 'The review has been deleted!')
+
+    return redirect(reverse('reviews'))

@@ -1,13 +1,24 @@
 from django.contrib import admin
-from .models import Post, Comment
 
 
-@admin.register(Comment)
-class CommentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'body', 'post', 'created_on', 'active')
-    list_filter = ('active', 'created_on')
-    search_fields = ('name', 'email', 'body')
-    actions = ['approve_comments']
+class ReviewAdmin(admin.ModelAdmin):
+    readonly_fields = ('user',
+                       'date',
+                       'review_rating',
+                       )
 
-    def approve_comments(self, request, queryset):
-        queryset.update(active=True)
+    fields = ('user', 'date',
+              'review_title',
+              'review_description',
+              'review_rating',
+              )
+
+    list_display = (
+        'user',
+        'date',
+        'review_title',
+        'review_description',
+        'review_rating',
+    )
+
+    ordering = ('date',)
