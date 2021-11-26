@@ -7,6 +7,7 @@ body {
     background-size: cover;
     height: calc(100vh - 164px);
     font-family: 'Pontano Sans', sans-serif;
+    overflow-x: hidden;
 }
 
 hr {

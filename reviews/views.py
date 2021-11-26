@@ -23,7 +23,7 @@ def reviews(request):
 def add_review(request):
     """Enables register user to add a review"""
     if request.method == "POST":
-        form = ReviewForm(request.POST)
+        review_form = ReviewForm(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request,
@@ -34,12 +34,12 @@ def add_review(request):
             messages.error(request, 'Oh no! There was an error.\
                            Please check the form is valid and resubmit')
     else:
-        form = ReviewForm()
+        review_form = ReviewForm()
 
-    form = ReviewForm()
+    review_form = ReviewForm()
     template = 'reviews/add_review.html'
     context = {
-        'form': form,
+        'review_form': review_form,
     }
 
     return render(request, template, context)
@@ -62,12 +62,12 @@ def edit_review(request):
             messages.error(request, 'Oh no! There was an error.\
                             Please check the form is valid and resubmit')
     else:
-        form = ReviewForm()
+        review_form = ReviewForm()
 
-    form = ReviewForm(instance=review)
+    review_form = ReviewForm(instance=review)
     template = 'reviews/edit_review.html'
     context = {
-        'form': form,
+        'review_form': review_form,
         'review': review,
     }
 
