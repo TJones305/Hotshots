@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-
+from products.models import Product
 from .models import UserReview
 from .forms import ReviewForm
 
@@ -24,8 +24,8 @@ def add_review(request):
     """Enables register user to add a review"""
     if request.method == "POST":
         review_form = ReviewForm(request.POST)
-        if form.is_valid():
-            form.save()
+        if review_form.is_valid():
+            review_form.save()
             messages.success(request,
                              'Your feedback is important, Thanks!')
 
@@ -51,9 +51,9 @@ def edit_review(request):
     review = get_object_or_404(UserReview,
                                pk=review_id)
     if request.method == "POST":
-        form = ReviewForm(request.POST, instance=review)
-        if form.is_valid():
-            form.save()
+        review_form = ReviewForm(request.POST, instance=review)
+        if review_form.is_valid():
+            review_form.save()
             messages.success(request,
                              'Review has been edited')
 

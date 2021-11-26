@@ -1,7 +1,8 @@
 from django.contrib import admin
+from .models import UserReview
 
 
-class ReviewAdmin(admin.ModelAdmin):
+class UserReviewAdmin(admin.ModelAdmin):
     readonly_fields = ('user',
                        'date',
                        'review_rating',
@@ -11,6 +12,7 @@ class ReviewAdmin(admin.ModelAdmin):
               'review_title',
               'review_description',
               'review_rating',
+              'product'
               )
 
     list_display = (
@@ -22,3 +24,5 @@ class ReviewAdmin(admin.ModelAdmin):
     )
 
     ordering = ('date',)
+
+admin.site.register(UserReview, UserReviewAdmin)
