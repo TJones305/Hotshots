@@ -1,56 +1,71 @@
 <div class="bg-rose">
     <div class="text-black">
         {% if user.is_authenticated %}
-        <div class="row">
+        <div class="row ">
             <!--Blank form for authenticated users-->
-            <div class="col">
-                <div class="col-12 col-lg-10 text-uppercase text-center text-darkred mt-4 ml-5">
+            <div class="col offset-lg-3">
+                <div class="col-12 col-lg-6 text-uppercase text-center text-darkred mt-5 ml-5">
                     <p class="text-muted text-red font-weight-bold">*Fill out the form below to submit a product review</p>
                     <hr class="w-50">
-                    <form action="{% url 'reviews' %}" method="POST" id="review-form">
+                    <form action="{% url 'reviews' %}" method="POST" id="review-form" >
                         {% csrf_token %}
-                        <fieldset class="rounded px-3 mb-5">
-                            <legend class="fieldset-label text-black text-center px-2 w-auto font-weight-bold"><u>Review Title</u></legend>
-                            <!--{{ review.review_title | as_crispy_field  -->
-                        </fieldset>
-                        <hr class="w-50">
-                        <fieldset class="rounded px-3 mb-5">
-                            <legend class="fieldset-label px-2 w-auto text-black text-center font-weight-bold"><u>Product Review and Rating</u></legend>
-                            <!--{{ review_form.review_description | as_crispy_field -->
-                            <!--{{ review_form.review_rating | as_crispy_field -->
-                            <div class="float-center">
-                                {% if user.is_authenticated %}
-                                <label for="id-save-review">
-                                    <a class="btn btn-darkred rounded border-black font-weight-bold" href="{% url 'account_signup' %}">Save Review <i class="fas fa-file-alt"></i></a> 
-                                </label>
-                                {% else %}
-                                <label for="id-save-review">
-                                    <a href="{% url 'account_signup' %}" class="text-info">Create Account</a> or
-                                    <a href="{% url 'account_login' %}" class="text-info">Sign In</a> to write a review.
-                                </label>
-                                {% endif %}
-                            </div>
-                        </fieldset>
+                        <div>
+                            <fieldset class="rounded px-3 mb-2">
+                                <legend class="fieldset-label text-black text-center px-2 w-auto font-weight-bold"><u>Review Title</u></legend>
+                                    {{ form.review_title | as_crispy_field }}
+                            </fieldset>
+                            <hr class="w-50">
+                            <fieldset class="rounded px-3 mb-2">
+                                <legend class="fieldset-label px-2 w-auto text-black text-center font-weight-bold"><u>Product Review and Rating</u></legend>
+                                    <div>{{ form.review_description | as_crispy_field }}</div>
+                                    <div class="ml-5">
+                                        <select name="review_rating" id="id_review_rating" class="form-control rounded w-50 mb-4 bg-white text-darkred border-black ml-4">
+                                            <option value="0">0 - No Rating Given</option>
+                                            <option value="1">1 - Stay Away</option>
+                                            <option value="2">2 - Subpar</option>
+                                            <option value="3">3 - OK</option>
+                                            <option value="4">4 - Good</option>
+                                            <option value="5">5 - Excellent</option>
+                                        </select>
+                                        <!--<div class="float-right">-->
+                                            {% if user.is_authenticated %}
+                                            <label for="id-save-review">
+                                                <a class="btn btn-red rounded border-black font-weight-bold mb-2" href="{% url 'account_signup' %}">Save Review <i class="fas fa-file-alt"></i></a> 
+                                            </label>
+                                            {% else %}
+                                            <label for="id-save-review">
+                                                <a href="{% url 'account_signup' %}" class="text-info">Create Account</a> or
+                                                <a href="{% url 'account_login' %}" class="text-info">Sign In</a> to write a review.
+                                            </label>
+                                            {% endif %}
+                                        <!--</div>-->
+                                    </div>
+                            </fieldset>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
         {% endif %}
         <div class="row offset-3">
-            <!--Display reviews about chosen product-->
-            <div class="col-6 ml-3 mb-2 font-weight-bold border-black rounded bg-darkred text-rose">
-                <div class="card-top mt-2">
-                    <h3 class="ml-2">Title: {{ review.review_title }}</h3>
-                </div>
-                <hr class="w-100 bg-rose">
-                <div class="card-body">
-                    <p>Product Review: {{ review.review_description }}</p>
-                    <hr class="w-75 bg-rose ml-0">
-                    <p class="text-red">Product Rating: {{ review.review_rating }}</p>
-                </div>
-                <hr class="w-100 bg-rose">
-                <div class="card-bottom">
-                    <p class="text-muted text-rose ml-2"> by: {{ review.user }} on {{ review.date }}</p>
+            <div class="col ml-5" >
+                <!--Display reviews about chosen product-->
+                <div class="col-12 col-lg-6 mb-2 mt-2 font-weight-bold border-black rounded bg-darkred text-rose text-left">
+                    <div>
+                        <div class="card-top mt-2">
+                            <h3>Title: {{ review.review_title }}</h3>
+                        </div>
+                        <hr class="w-100 bg-rose">
+                        <div class="card-body">
+                            <p>Product Review: {{ review.review_description }}</p>
+                            <hr class="w-75 bg-rose ml-0">
+                            <p class="text-red">Product Rating: {{ review.review_rating }}</p>
+                        </div>
+                        <hr class="w-100 bg-rose">
+                        <div class="card-bottom">
+                            <p class="text-muted text-rose"> by: {{ review.user }} on {{ review.date }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

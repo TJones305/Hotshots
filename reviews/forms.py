@@ -11,7 +11,9 @@ class ReviewForm(forms.ModelForm):
             'date',
         )
 
-        fields = ['review_title', 'review_description', 'review_rating']
+        fields = ('review_title',
+                  'review_description',
+                  'review_rating',)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -21,14 +23,14 @@ class ReviewForm(forms.ModelForm):
             'review_rating': 'No Rating',
         }
 
-        self.fields['review_title'].widget.attrs['autofocus'] = True
-        for field in self.fields.items():
+        self.fields['review_title'].widget.attrs['autofocus'] = False
+        for field in self.fields:
             if self.fields[field].required:
                 placeholder = f'{placeholders[field]} *'
             else:
                 placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
-        self.fields[field].widget.attrs['class'] = ('border-black '
-                                                    'rounded-0 '
-                                                    )
-        self.fields[field].label = False
+                self.fields[field].widget.attrs['placeholder'] = placeholder
+            self.fields[field].widget.attrs['class'] = ('border-black '
+                                                        'rounded-0 '
+                                                        )
+            self.fields[field].label = False
