@@ -46,6 +46,12 @@
                         {% else %}
                         <small class="text-muted text-red font-weight-bold">No Current Rating</small>
                         {% endif %}
+                        {% if request.user.is_superuser %}
+                        <small class="ml-3 font-weight-bold bg-white text-darkred">
+                            <a class="text-black ml-2 mr-2" href="{% url 'edit_product' product.id %}">Edit</a> | 
+                            <a class="text-red ml-2 mr-2" href="{% url 'delete_product' product.id %}">Delete</a>
+                        </small>
+                    {% endif %}
                         <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                             {% csrf_token %}
                             <div class="form-row bg-darkred">
