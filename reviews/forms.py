@@ -6,14 +6,13 @@ class ReviewForm(forms.ModelForm):
 
     class Meta:
         model = UserReview
-        exclude = (
-            'user',
-            'date',
-        )
 
-        fields = ('review_title',
+        exclude = ('user', 'date', 'review_rating', )
+
+        fields = (
+                  'review_title',
                   'review_description',
-                  'review_rating',)
+                  )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -31,6 +30,5 @@ class ReviewForm(forms.ModelForm):
                 placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = ('border-black '
-                                                        'rounded-0 '
-                                                        )
+                                                        'rounded-0 ')
             self.fields[field].label = False

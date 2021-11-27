@@ -6,12 +6,12 @@ from .models import UserReview
 from .forms import ReviewForm
 
 
-def reviews(request):
+def product_reviews(request):
     """ A view displaying reviews for the chosen product """
     # currently all reviews displaying
     reviews = UserReview.objects.all()
 
-    template = 'reviews/reviews.html'
+    template = 'templates/includes/product_review.html'
     context = {
         'reviews': reviews,
     }
