@@ -11,7 +11,7 @@ def product_reviews(request):
     # currently all reviews displaying
     reviews = UserReview.objects.all()
 
-    template = 'templates/includes/product_review.html'
+    template = 'reviews/templates/reviews/includes/product_review.html'
     context = {
         'reviews': reviews,
     }
