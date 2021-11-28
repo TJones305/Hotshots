@@ -3,8 +3,7 @@ from .models import NewBlog
 
 
 class NewBlogAdmin(admin.ModelAdmin):
-    fields = ('date',
-              'blog_title',
+    fields = ('blog_title',
               'blog_description',
               'blog_verdict',
               )

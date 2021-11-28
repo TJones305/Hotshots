@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+{% for blog in blogs %}
+<div class="row ml-2 mr-2 mb-3">
+    <div class="col-sm-12 col-md-6 col-xl-4">
+        <div class="font-weight-bold border-black rounded bg-darkred text-rose text-center">
+            <div>
+                <div class="font-weight-bold border-black rounded bg-darkred text-rose text-center">
+                    <div>
+                        <div class="card-top mt-2">
+                            <h3 class="text-uppercase">{{ blog.blog_title }}</h3>
+                        </div>
+                        <hr class="w-100 bg-rose">
+                        <div class="card-body bg-rose text-black">
+                            <p>{{ blog.blog_description }}</p>
+                            <hr class="w-75 bg-rose">
+                            <p class="text-uppercase text-red">Final Say:</p>
+                            <p>{{ blog.blog_verdict }}</p>
+                        </div>
+                        <hr class="w-100 bg-rose">
+                        <div class="card-bottom">
+                            <p class="text-muted text-rose"> by: {{ request.user.username }} on {{ blog_date }}</p>
+                            <div>
+                                {% if request.user.is_superuser %}
+                                <small class="font-weight-bold bg-white text-darkred">
+                                    <a class="text-black" href="{% url 'edit_blog' blog.id %}">Edit</a> |
+                                    <a class="text-red" href="{% url 'delete_blog' blog.id %}">Delete</a>
+                                </small>
+                                {% endif %}
+                            </div>
+                        </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% if forloop.counter|divisibleby:1 %}
+<div class="col-12 d-sm-none mb-5">
+    <hr>
+</div>
+{% endif %}
+{% if forloop.counter|divisibleby:2 %}
+<div class="col-12 d-none d-sm-block d-md-block d-lg-block d-xl-none mb-5">
+    <hr>
+</div>
+{% endif %}
+{% if forloop.counter|divisibleby:3 %}
+<div class="col-12 d-none d-xl-block mb-5">
+    <hr>
+</div>
+{% endif %}
+{% endfor %}
+{% endblock %}

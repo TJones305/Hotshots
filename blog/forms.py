@@ -7,9 +7,9 @@ class BlogForm(forms.ModelForm):
     class Meta:
         model = NewBlog
 
-        exclude = ('date',)
+        exclude = ('blog_date',)
 
-        fields = ('date',
+        fields = ('blog_date',
                   'blog_title',
                   'blog_description',
                   'blog_verdict',
@@ -18,7 +18,7 @@ class BlogForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         placeholders = {
-                'date': 'Date',
+                'blog_date': 'Date',
                 'blog_title': 'Blog Title',
                 'blog_description': 'Blog Description',
                 'blog_verdict': 'Blog Verdict',

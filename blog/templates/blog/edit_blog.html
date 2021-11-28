@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="bg-rose">
+    <div class="text-black">
+        {% if user.is_authenticated %}
+        <div class="row ">
+            <!--Blank form for authenticated users-->
+            <div class="col offset-lg-3">
+                <div class="col-12 col-lg-6 text-uppercase text-center text-darkred mt-5 ml-5">
+                    <p class="text-muted text-red font-weight-bold">*Fill out the form below to submit a blog
+                    </p>
+                    <hr class="w-50">
+                    <form action="{% url 'edit_blog' blog.id %}" method="POST" id="review-form">
+                        {% csrf_token %}
+                        <div>
+                            <fieldset class="rounded px-3 mb-2">
+                                <legend class="fieldset-label text-black text-center px-2 w-auto font-weight-bold rounded">
+                                    <u>Blog Title</u></legend>
+                                {{ blog_form.blog_title }}
+                            </fieldset>
+                            <hr class="w-50">
+                            <fieldset class="rounded px-3 mb-2">
+                                <legend class="fieldset-label px-2 w-auto text-black text-center font-weight-bold rounded">
+                                    <u>Blog Content</u></legend>
+                                <small class="font-weight-bold">Main:</small>
+                                <div class="mb-2">{{ blog_form.blog_description }}</div>
+                                <small class="font-weight-bold">Final Say:</small>
+                                <div>{{ blog_form.blog_verdict }}</div>
+                                    <div class="text-black rounded">
+                                        <p>User: {{ request.user.username }}</p>
+                                        <small>{{ request.date }}</small>
+                                    </div>
+                                    <!--<div class="float-right">-->
+                                    {% if user.is_authenticated %}
+                                    <label for="id-save-review">
+                                        <button class="btn btn-red rounded border-black font-weight-bold mb-2"
+                                            href="{% url 'edit_blog' blog.id %}">Update Blog <i
+                                                class="fas fa-file-alt"></i></button>
+                                    </label>
+                                    {% endif %}
+                                    <!--</div>-->
+                                </div>
+                            </fieldset>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
