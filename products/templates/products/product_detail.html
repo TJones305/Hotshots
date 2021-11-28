@@ -22,7 +22,8 @@
                     </a>
                     {% else %}
                     <a href="">
-                        <img src="{{ MEDIA_URL }}noimag.png" alt="{{ product.name }}" class="card-img-top img-thumbnail">
+                        <img src="{{ MEDIA_URL }}noimag.png" alt="{{ product.name }}"
+                            class="card-img-top img-thumbnail">
                     </a>
                     {% endif %}
                 </div>
@@ -42,76 +43,81 @@
                         {% endif %}
                         <p class="mt-2 text-left ml-3 mr-3">{{ product.description }}</p>
                         {% if product.rating %}
-                        <small class="text-muted text-red font-weight-bold">Rating: <i class="fas fa-star mr-1"></i>{{ product.rating }}</small>
+                        <small class="text-muted text-red font-weight-bold">Rating: <i
+                                class="fas fa-star mr-1"></i>{{ product.rating }}</small>
                         {% else %}
                         <small class="text-muted text-red font-weight-bold">No Current Rating</small>
                         {% endif %}
                         {% if request.user.is_superuser %}
                         <small class="ml-3 font-weight-bold bg-white text-darkred">
-                            <a class="text-black ml-2 mr-2" href="{% url 'edit_product' product.id %}">Edit</a> | 
+                            <a class="text-black ml-2 mr-2" href="{% url 'edit_product' product.id %}">Edit</a> |
                             <a class="text-red ml-2 mr-2" href="{% url 'delete_product' product.id %}">Delete</a>
                         </small>
-                    {% endif %}
+                        {% endif %}
                         <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                             {% csrf_token %}
                             <div class="form-row bg-darkred">
                                 {% with product.has_sizes as s %}
                                 {% if s %}
-                                    {% if product.category.name == '10bowls' %}
-                                        <div class="col-12 text-rose text-center"> 
-                                            <p class="text-uppercase font-weight-bold mt-2"><strong><u>Size:</u></strong></p>
-                                            <div class="ml-5 pl-5">
-                                                <select name="product_size" id="id_product_size" class="form-control rounded w-50 ml-5 pl-5 bg-rose text-black">
-                                                    <option value="00">00</option>
-                                                    <option value="0">0</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    {% elif product.category.name == "30footwear" %}
-                                    <div class="col-12 text-rose text-center">
-                                        <p class="text-uppercase font-weight-bold mt-2"><strong><u>Size:</u></strong></p>
-                                        <div class="ml-5 pl-5">
-                                            <select name="product_size" id="id_product_size" class="form-control rounded w-50 ml-5 pl-5 bg-rose text-black">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                    <option value="6">6</option>
-                                                    <option value="7">7</option>
-                                                    <option value="8">8</option>
-                                                    <option value="9">9</option>
-                                                    <option value="10">10</option>
-                                                    <option value="11">11</option>
-                                                    <option value="12">12</option>
-                                                    <option value="13">13</option>
-                                            </select>
-                                        </div>
+                                {% if product.category.name == '10bowls' %}
+                                <div class="col-12 text-rose text-center">
+                                    <p class="text-uppercase font-weight-bold mt-2"><strong><u>Size:</u></strong></p>
+                                    <div class="ml-5 pl-5">
+                                        <select name="product_size" id="id_product_size"
+                                            class="form-control rounded w-50 ml-5 pl-5 bg-rose text-black">
+                                            <option value="00">00</option>
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
                                     </div>
-                                    {% else %}
-                                    <div class="col-12 text-rose text-center">
-                                        <p class="text-uppercase font-weight-bold mt-2"><strong><u>Size:</u></strong></p>
-                                        <div class="ml-5 pl-5">
-                                            <select name="product_size" id="id_product_size" class="form-control rounded w-50 ml-5 pl-5 bg-rose text-black">
-                                                <option value="xs">XS</option>
-                                                <option value="s">S</option>
-                                                <option value="m">M</option>
-                                                <option value="l">L</option>
-                                                <option value="xl">XL</option>
-                                                <option value="xxl">XXL</option>
-                                                <option value="xxxl">XXXL</option>
-                                            </select>
-                                        </div>
+                                </div>
+                                {% elif product.category.name == "30footwear" %}
+                                <div class="col-12 text-rose text-center">
+                                    <p class="text-uppercase font-weight-bold mt-2"><strong><u>Size:</u></strong></p>
+                                    <div class="ml-5 pl-5">
+                                        <select name="product_size" id="id_product_size"
+                                            class="form-control rounded w-50 ml-5 pl-5 bg-rose text-black">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                        </select>
                                     </div>
-                                    {% endif %}
+                                </div>
+                                {% else %}
+                                <div class="col-12 text-rose text-center">
+                                    <p class="text-uppercase font-weight-bold mt-2"><strong><u>Size:</u></strong></p>
+                                    <div class="ml-5 pl-5">
+                                        <select name="product_size" id="id_product_size"
+                                            class="form-control rounded w-50 ml-5 pl-5 bg-rose text-black">
+                                            <option value="xs">XS</option>
+                                            <option value="s">S</option>
+                                            <option value="m">M</option>
+                                            <option value="l">L</option>
+                                            <option value="xl">XL</option>
+                                            <option value="xxl">XXL</option>
+                                            <option value="xxxl">XXXL</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                {% endif %}
                                 {% endif %}
                                 <div class="col-12">
-                                    <p class="mt-1 text-rose text-uppercase font-weight-bold"><strong><u>Quantity</u></strong></p>
+                                    <p class="mt-1 text-rose text-uppercase font-weight-bold">
+                                        <strong><u>Quantity</u></strong></p>
                                     <div class="form-group w-50 ml-5">
                                         <div class="input-group ml-5 pl-4">
                                             <div class="input-group-prepend">
@@ -122,8 +128,9 @@
                                                     </span>
                                                 </button>
                                             </div>
-                                            <input class="form-control qty_input text-center bg-rose text-black font-weight-bold" 
-                                                type="number" name="quantity" value="1" min="1" max="99" 
+                                            <input
+                                                class="form-control qty_input text-center bg-rose text-black font-weight-bold"
+                                                type="number" name="quantity" value="1" min="1" max="99"
                                                 data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
                                             <div class="input-group-append">
                                                 <button class="increment-qty btn btn-black rounded-0"
@@ -137,15 +144,18 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col{% if s %}-12 mt-2{% endif %}">
-                                <div class="text-black pl-5"><i class="fas fa-plus-circle fa-lg mr-2"></i><input type="submit" class="btn btn-black font-weight-bold rounded-0 text.uppercase mt-2 mb-2" value="Add to Bag"></div>
-                                <a href="{% url 'products' %}" class="btn btn-darkred font-weight-bold rounded-0 mt-2 mb-2">
+                                <div class="text-black pl-5"><i class="fas fa-plus-circle fa-lg mr-2"></i><input
+                                        type="submit"
+                                        class="btn btn-black font-weight-bold rounded-0 text.uppercase mt-2 mb-2"
+                                        value="Add to Bag"></div>
+                                <a href="{% url 'products' %}"
+                                    class="btn btn-darkred font-weight-bold rounded-0 mt-2 mb-2">
                                     <span class="icon">
                                         <i class=" fas fa-chevron-left"></i>
                                     </span>
                                     <span> <i class="fas fa-shopping-cart mr-2"></i> Keep Shopping</span>
-                                </a>                         
+                                </a>
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             {% endwith %}
@@ -154,6 +164,20 @@
                 </div>
             </div>
         </div>
+        <div class="bg-rose mt-4 text-center">
+            <div>
+                <h2 class="logo-font"><u>Reviews</u></h2>
+                
+                {% if user.is_authenticated %}
+                <small><a href="{% url 'add_review' product.id %}" class="btn btn-rose border-black font-weight-bold">Write Review</a></small>
+                {% endif %}
+                <hr>
+            </div>
+            {% for review in reviews %}
+                <h3 class="logo-font bg-black text-rose"><strong> {{ review.product.name }}</strong></h3>
+            {% endfor %}
+
+            {% include 'reviews/includes/product_review.html' %}
     </div>
 </div>
 {% endblock %}

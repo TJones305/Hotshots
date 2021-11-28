@@ -1,6 +1,5 @@
 from .models import UserReview
 from django import forms
-from products.models import Product
 
 
 ratings = [
@@ -17,12 +16,13 @@ class ReviewForm(forms.ModelForm):
 
     class Meta:
         model = UserReview
-        review_rating = forms.CharField(label='Rating',
-                                        widget=forms.Select(choices=ratings))
+        review_rating = forms.CharField(label='Rating', widget=forms.Select(choices=ratings))
 
         exclude = ('user', 'date',)
 
-        fields = (
+        fields = ('user',
+                  'date',
+                  'product',
                   'review_title',
                   'review_description',
                   'review_rating',
@@ -31,14 +31,14 @@ class ReviewForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         placeholders = {
+            'user': 'user',
+            'date': 'date',
+            'product': 'product',
             'review_title': 'Review Title',
             'review_description': 'Product review here ...',
             'review_rating': 'No Rating',
         }
-        #  products = Product.objects.all()
-        #  product = [(p.id, p.get_product_name()) for p in products]
 
-        #  self.fields['product'].choices = product
         self.fields['review_title'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if self.fields[field].required:

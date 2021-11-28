@@ -16,13 +16,15 @@ class UserReviewAdmin(admin.ModelAdmin):
               )
 
     list_display = (
-        'user',
-        'date',
+        'product',
         'review_title',
+        'date',
+        'user',
         'review_description',
         'review_rating',
     )
 
     ordering = ('date',)
+
 
 admin.site.register(UserReview, UserReviewAdmin)
