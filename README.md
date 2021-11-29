@@ -111,40 +111,51 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 > ## Testing User Stories from User Experience (UX) Section
 
 ##  *User Goals*  
-- ### Be able to navigate the site easily
+- ## Be able to navigate the site easily
 ![Navbar](media/README_images/navbar.png "Navbar")
 
 Users are able to efficiently navigate the site via the navbar on at the top of the site. All of the option present on the image above have a drop down menu for the User to narrow down their navigation. The basket preview has a checkout button for convinience and all buttons are well lablled. 
 
-- ### Be able to search for items on the site 
+- ## Be able to search for items on the site 
 ![Navbar](media/README_images/navbar.png "Navbar")
 
-Users are able to search in the searchbar picture, using keywords and it will run a search that looks for matches in both the product name and product description, which allows the user to look at products tailored to thier needss.
+Users are able to search in the searchbar picture, using keywords and it will run a search that looks for matches in both the product name and product description, which allows the user to look at products tailored to thier needs.
 
-- ### Be able to control and amend products I choose
+- ## Be able to control and amend products I choose
 ![Product Detail and Basket](media/README_images/product_detail_&_basket.png "Product Detail and Basket")
 
-Users can control and amend in various places. For non-registered Users they are able to add, remove and modify quantity of their shopping basket. For registered user they can also add reviews about each product if they wish, and edit their information via their profile page. Users with superuser access, can do all the aforementioned action, but addtionally can edit and delete reviews, add/edit and
+Users can control and amend in various places. For non-registered Users they are able to add, remove and modify quantity of their shopping basket. For registered user they can also add reviews about each product if they wish, and edit their information via their profile page. Users with superuser access, can do all the aforementioned action, but additionally can edit and delete reviews and blogs, as well as create blogs for features.  
 
-- ### Be able to view past orders 
-![Lighthouse Report Mobile](media/README_images/lighthouse-mobile.jpg "Lighthouse Report Mobile")
+- ## Be able to view past orders 
+![Order History](media/README_images/order_history.png "Order History")
 
-- ### Be able to register an account
+In a registered User's profile are the past orders they aquired. Clicking on these will give the User the order detail information.
+
+- ## Be able to register an account
 ![Account Menu](media/README_images/account_menu.png "Account Menu")
 
-- ### Be able to read extra content that may help inform my purchasing
+From clicking on the account tab in the top right of the screen a dropdown menu will give Users the option to Create Account. From this link they are taken to a form to fill out their details and upon confirming registration are taken to their new profile page.
+
+- ## Be able to read extra content that may help inform my purchasing
 ![Navbar](media/README_images/navbar.png "Navbar")
+
+From the navbar Users have the option to choose "Extra Info" from the menu options, this will give the further option of blogs ...
+
 ![Blog](media/README_images/blog.png "Blog")
 
-- ### Be able to express my views about a product whether positive or negative to inform other users.
+In the Blogs section Users can find features to aid in their purchasing decisions.
+
+- ## Be able to express my views about a product whether positive or negative to inform other users.
 ![Reviews](media/README_images/review.png "Reviews")
+
+Registered Users can write reviews about products on the site in the product detail pages. All Users are able to view them, with only those with administrative powers able to delete.
 
 ## **Further Testing** 
 - The Website was tested on Google Chrome, Opera, Microsoft Edge and Safari browsers. 
 - The website was viewed on a variety of devices such as Desktop, Laptop, iPad Air & iPhoneX. Other devices were tested through the inspect web developer tools.
 
-##  **Known Bugs** 
-- 
+##  **Known Bugs/Issues** 
+- Reviews rating system: In implementing a dropdown box via models for adding and editing product reviews it appears that this has caused the rating to not appear on the front end under the review instead reverting to "No Rating" as per the templating. This is a front end issue which the developer was unable to find a resoultion to, however in the admin panel it is clear that the form data is capturing the review rating.
 
 > ## Deployment 
 
