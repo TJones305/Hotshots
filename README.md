@@ -25,6 +25,9 @@
 
 ## Design 
 
+![Home](media/README_images/home_page.png "Home")
+
+
 ### **Colour Scheme** 
 The colour scheme for this site was developed with assitancefrom the following site [coolors](https://coolors.co/).
 Starting off with Crimson (#D7263D) other complementary colours were suggested using the Cooloers generator, which aided the developer to settle on the following colours completing the scheme Misty Rose(#FFE3DC), Baby Pink(#DBB4AD), Dark Sienna(3B0D11), Black Coffee(#3A2D32) and Dark Liver(#4C4045). The most prodominent throughout the site colours are Crimson, Dark Sienna and Baby Pink.
@@ -39,19 +42,19 @@ As a Bowls e-commerce store the developer felt it was important for there to be 
 
 1. Desktop
 
-![Wireframe Desktop](/workspace/Hotshots/media/README_images/wireframe-hotshots-desktop.pdf "Wireframe Desktop")
+![Wireframe Desktop](media/README_images/wireframe-hotshots-desktop.pdf "Wireframe Desktop")
 
 2. Tablet
 
-![Wireframe Tablet](/workspace/Hotshots/media/README_images/wireframe-hotshots-tablet.pdf "Wireframe Tablet")
+![Wireframe Tablet](media/README_images/wireframe-hotshots-tablet.pdf "Wireframe Tablet")
 
 3. Mobile
 
-![Wireframe Mobile](/workspace/Hotshots/media/README_images/wireframe-hotshots-mobile.pdf "Wireframe Mobile")
+![Wireframe Mobile](media/README_images/wireframe-hotshots-mobile.pdf "Wireframe Mobile")
 
 ### **Features**
 - Responsive on most devices sizes
-- Interactive elements (Burger menu (mobile devices only), sidenav, dropdown boxes on post creation, date pickers, collapsible on user profile, modal used to confirm post deletion, registarion and login)
+- Interactive elements
 
 > ## Technologies Used 
 
@@ -63,13 +66,13 @@ Python3
 
 ### **Frameworks, Libraries & Programs Used** 
 
-- Materialize 1.0: Materialize was used to assist with the responsiveness and styling of the website. Specific features include - navbars, burger menu, date picker, modal, collapsible. 
+- Bootstrap 4: Bootstrap was used to assist with the responsiveness and styling of the website. Specific features include - navbars, burger menu, collapsible. 
  
 - Google Fonts: Google fonts was used to import the two fonts on the site into the style.css file. 
 
 - Font Awesome: Font Awesome was used on buttons to add icons for aesthetic and UX purposes. 
 
-- jQuery: jQuery came with Materialize to make the navbar responsive, along with the other features taken from Materialize. 
+- jQuery: jQuery is required for Bootstrap to make the navbar responsive, along with the other features taken from Boostrap. 
  
 - Git: Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub. 
 
@@ -79,16 +82,16 @@ Python3
 
 - Heroku: Heroku was use as the platform to deploy the app.
 
-- Django: Django was used to store the colections of the app.
+- Django: Django was used to store the production database of the created apps.
 
--Jinja: Jinja templating was used extensively throughout the site.
+- Jinja: Jinja templating was used extensively throughout the site.
 
 > ## Testing 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
 ### **W3C Markup Validator**
 
-![Markup Validator Report](/README_images/markup-validator.jpg "Markup Validator")
+![Markup Validator Report](media/README_images/markup-validator.jpg "Markup Validator")
     The Markup Validator highlighted 2 errors. 1 related to href attribute on h4, this was to apply Jinja on the brand logo so when 
     clicked it took the user to the home page, however the developer has now removed this href. the other error relates to a div being a child of a ul.
     The div was placed as such to enable the hero image to load onto the side nav, without it the sidebar was solid black. The developer has decided to
@@ -96,32 +99,45 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ### **W3C CSS Validator**  
 
-![CSS Validator Report](/README_images/css-validator.jpg "CSS Validator")
+![CSS Validator Report](media/README_images/css-validator.jpg "CSS Validator")
 	The result of the CSS validator highlighted 3 errors. One error is part of Materialize's CDN. The other Two relate to the rainbow 
     colour scheme created for the main title. The developer feels that this is a justified error to create a wow effect for the user. 
 
 ### **Lighthouse** 
-![Lighthouse Report Desktop](/README_images/lighthouse-desktop.jpg "Lighthouse Report Desktop")
-![Lighthouse Report Mobile](/README_images/lighthouse-mobile.jpg "Lighthouse Report Mobile")
+![Lighthouse Report Desktop](media/README_images/lighthouse-desktop.jpg "Lighthouse Report Desktop")
+![Lighthouse Report Mobile](media/README_images/lighthouse-mobile.jpg "Lighthouse Report Mobile")
 
 
 > ## Testing User Stories from User Experience (UX) Section
 
 ##  *User Goals*  
 - ### Be able to navigate the site easily
+![Navbar](media/README_images/navbar.png "Navbar")
+
+Users are able to efficiently navigate the site via the navbar on at the top of the site. All of the option present on the image above have a drop down menu for the User to narrow down their navigation. The basket preview has a checkout button for convinience and all buttons are well lablled. 
 
 - ### Be able to search for items on the site 
+![Navbar](media/README_images/navbar.png "Navbar")
+
+Users are able to search in the searchbar picture, using keywords and it will run a search that looks for matches in both the product name and product description, which allows the user to look at products tailored to thier needss.
 
 - ### Be able to control and amend products I choose
+![Product Detail and Basket](media/README_images/product_detail_&_basket.png "Product Detail and Basket")
+
+Users can control and amend in various places. For non-registered Users they are able to add, remove and modify quantity of their shopping basket. For registered user they can also add reviews about each product if they wish, and edit their information via their profile page. Users with superuser access, can do all the aforementioned action, but addtionally can edit and delete reviews, add/edit and
 
 - ### Be able to view past orders 
+![Lighthouse Report Mobile](media/README_images/lighthouse-mobile.jpg "Lighthouse Report Mobile")
 
 - ### Be able to register an account
+![Account Menu](media/README_images/account_menu.png "Account Menu")
 
 - ### Be able to read extra content that may help inform my purchasing
+![Navbar](media/README_images/navbar.png "Navbar")
+![Blog](media/README_images/blog.png "Blog")
 
 - ### Be able to express my views about a product whether positive or negative to inform other users.
-
+![Reviews](media/README_images/review.png "Reviews")
 
 ## **Further Testing** 
 - The Website was tested on Google Chrome, Opera, Microsoft Edge and Safari browsers. 
