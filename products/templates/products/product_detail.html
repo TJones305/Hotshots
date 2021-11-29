@@ -14,7 +14,7 @@
 <div class="bg-red">
     <div class="container-fluid mt-2">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-1">
+            <div class="col-10 offset-1 col-md-6 offset-md-0 col-lg-4 offset-lg-1">
                 <div class="image-container mt-2">
                     {% if product.image %}
                     <a href=" {{ product.image.url }}" target="_blank">
@@ -28,7 +28,7 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 text-center mt-2 mr-5">
+            <div class="col-12 col-md-5 col-lg-4 offset-lg-2 text-center mt-2">
                 <div class="product-details-container font-weight-bold shadow">
                     <p class="mb-0 text-center text-rose text-uppercase font-weight-bold">{{ product.name }}</p>
                     <div class="text-darkred font-weight-bold bg-rose">

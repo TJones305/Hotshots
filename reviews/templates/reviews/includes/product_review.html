@@ -2,14 +2,13 @@
     {% for review in reviews %}
     {% if review %}
     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-        <!--Display reviews about chosen product-->
-        <div class="font-weight-bold border-black rounded bg-darkred text-rose text-center">
+        <div class="font-weight-bold border-black rounded bg-darkred text-rose text-center card h-150 mb-3">
             <div>
-                <div class="card-top mt-2">
+                <div class="card-top h-25 mt-2">
                     <h3 class="text-uppercase">{{ review.review_title }}</h3>
                 </div>
                 <hr class="w-100 bg-rose">
-                <div class="card-body bg-rose text-black">
+                <div class="card-body h-50 bg-rose text-black">
                     <p class="text-uppercase">Product Review: </p>
                     <p>{{ review.review_description }}</p>
                     <hr class="w-75 bg-rose">
@@ -22,40 +21,17 @@
                 </div>
                 <hr class="w-100 bg-rose">
                 <div class="card-bottom">
-                    <p class="text-muted text-rose"> by: {{ review.user }} on {{ review.date }}</p>
                     {% if request.user.is_superuser %}
                     <small class="font-weight-bold bg-white text-darkred">
                         <a class="text-black" href="{% url 'edit_review' review.id %}">Edit</a> | 
                         <a class="text-red" href="{% url 'delete_review' review.id %}">Delete</a>
                     </small>
                     {% endif %}
+                    <p class="text-muted text-rose"> by: {{ review.user }} on {{ review.date }}</p>
                 </div>
             </div>
         </div>
     </div>
-</div>
-{% if forloop.counter|divisibleby:1 %}
-<div class="col-12 d-sm-none mb-5">
-    <hr>
-</div>
-{% endif %}
-{% if forloop.counter|divisibleby:2 %}
-<div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-    <hr>
-</div>
-{% endif %}
-{% if forloop.counter|divisibleby:3 %}
-<div class="col-12 d-none d-lg-block d-xl-none mb-5">
-    <hr>
-</div>
-{% endif %}
-{% if forloop.counter|divisibleby:4 %}
-<div class="col-12 d-none d-xl-block mb-5">
-    <hr>
-</div>
-{% endif %}
-{% else %}
-<h3>No Reviews for this item</h3>
-{% endif %}
-{% endfor %}
+    {% endif %}
+    {% endfor %}
 </div>

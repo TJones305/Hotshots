@@ -57,8 +57,6 @@ def edit_review(request, review_id):
     """Enables register user to edit a review"""
     review = get_object_or_404(UserReview,
                                pk=review_id)
-    
-    print(review.product_id)
 
     if not request.user.is_superuser or request.user == review.user:
         messages.error(request, 'Whoops! did you get lost?,\

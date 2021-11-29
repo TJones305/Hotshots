@@ -17,7 +17,7 @@
             <!--Blank form for authenticated users-->
             <div class="col offset-lg-3">
                 <div class="col-12 col-lg-6 text-uppercase text-center text-darkred mt-5 ml-5">
-                    <p class="text-muted text-red font-weight-bold">*Fill out the form below to submit a product review
+                    <p class="text-muted text-red font-weight-bold">*Edit the form below and then update review
                     </p>
                     <hr class="w-50">
                     <form action="{% url 'edit_review' review.id %}" method="POST" id="blog-form">
@@ -26,7 +26,7 @@
                             <fieldset class="rounded px-3 mb-2">
                                 <legend class="fieldset-label text-black text-center px-2 w-auto font-weight-bold rounded">
                                     <u>Review Title</u></legend>
-                                {{ review_form.review_title }}
+                                {{ review_form.review_title | as_crispy_field }}
                             </fieldset>
                             <hr class="w-50">
                             <fieldset class="rounded px-3 mb-2">
@@ -34,8 +34,8 @@
                                     <u>Product Review and Rating</u>
                                 </legend>
                                 <div class="mb-3" hidden>{{ review_form.product }}</div>
-                                <div>{{ review_form.review_description }}</div>
-                                    {{ review_form.review_rating }}
+                                <div>{{ review_form.review_description | as_crispy_field }}</div>
+                                    {{ review_form.review_rating | as_crispy_field }}
                                 <div class="text-black rounded">
                                         <p>User: {{ request.user.username }}</p>
                                         <small>{{ request.date }}</small>

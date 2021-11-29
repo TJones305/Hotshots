@@ -9,12 +9,19 @@
 
 ### As a user I want to ...
 - Be able to navigate the site easily
+
 - Be able to search for items on the site 
+
 - Be able to control and amend products I choose
+
 - Be able to view past orders 
+
 - Be able to register an account
+
 - Be able to read extra content that may help inform my purchasing
+
 - Be able to express my views about a product whether positive or negative to inform other users.
+
 
 ## Design 
 

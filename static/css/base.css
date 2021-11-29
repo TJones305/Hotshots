@@ -262,7 +262,7 @@ a.category-badge > span.badge:hover  {
     }
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 50px;
     }
 }
 
@@ -296,11 +296,28 @@ a.category-badge > span.badge:hover  {
 
 @media (min-width: 991px) {
 
-    .header-container {
-        padding-top: 200px;
+    body {
+        padding-top: 100px;
     }
+}
+
+@media (min-height: 991px) {
 
     body {
-        height:calc(100vh -200px);
+        padding-top: 200px;
+    }
+}
+
+@media (min-width: 830px) {
+
+    body {
+        padding-top: 190px;
+    }
+}
+
+@media (max-height: 990px) {
+
+    body {
+        padding-top: 200px;
     }
 }

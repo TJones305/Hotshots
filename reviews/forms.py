@@ -1,6 +1,7 @@
 from .models import UserReview
 from django import forms
 
+
 class ReviewForm(forms.ModelForm):
 
     class Meta:
