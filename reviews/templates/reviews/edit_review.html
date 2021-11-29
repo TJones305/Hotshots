@@ -20,7 +20,7 @@
                     <p class="text-muted text-red font-weight-bold">*Fill out the form below to submit a product review
                     </p>
                     <hr class="w-50">
-                    <form action="{% url 'edit_review' product.id review.id %}" method="POST" id="review-form">
+                    <form action="{% url 'edit_review' review.id %}" method="POST" id="blog-form">
                         {% csrf_token %}
                         <div>
                             <fieldset class="rounded px-3 mb-2">
@@ -31,40 +31,29 @@
                             <hr class="w-50">
                             <fieldset class="rounded px-3 mb-2">
                                 <legend class="fieldset-label px-2 w-auto text-black text-center font-weight-bold rounded">
-                                    <u>Product Review and Rating</u></legend>
-                                <div class="mb-2">{{ review.product | crispy }}</div>
-
+                                    <u>Product Review and Rating</u>
+                                </legend>
+                                <div class="mb-3" hidden>{{ review_form.product }}</div>
                                 <div>{{ review_form.review_description }}</div>
-                                <!--<div class="ml-5">
-                                    <select name="review_rating" id="id_review_rating"
-                                        class="form-control rounded w-50 mb-4 bg-white text-darkred border-black ml-4">
-                                        <option value="0">0 - No Rating Given</option>
-                                        <option value="1">1 - Stay Away</option>
-                                        <option value="2">2 - Subpar</option>
-                                        <option value="3">3 - OK</option>
-                                        <option value="4">4 - Good</option>
-                                        <option value="5">5 - Excellent</option>
-                                    </select> -->
                                     {{ review_form.review_rating }}
-                                    <div class="text-black rounded">
+                                <div class="text-black rounded">
                                         <p>User: {{ request.user.username }}</p>
                                         <small>{{ request.date }}</small>
-                                    </div>
-                                    <!--<div class="float-right">-->
+                                </div>
+                                <div>
                                     {% if user.is_authenticated %}
                                     <label for="id-save-review">
                                         <button class="btn btn-red rounded border-black font-weight-bold mb-2"
-                                            href="{% url 'edit_review' product.id review.id %}">Update Review <i
+                                            href="{% url 'edit_review' review.id %}">Update Review <i
                                                 class="fas fa-file-alt"></i></button>
                                     </label>
                                     {% else %}
                                     <label for="id-save-review">
                                         <a href="{% url 'account_signup' %}" class="text-info">Create Account</a> or
                                         <a href="{% url 'account_login' %}" class="text-info">Sign In</a> to write a
-                                        review.
+                                            review.
                                     </label>
                                     {% endif %}
-                                    <!--</div>-->
                                 </div>
                             </fieldset>
                         </div>

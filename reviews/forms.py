@@ -1,22 +1,10 @@
 from .models import UserReview
 from django import forms
 
-
-ratings = [
-    ("0", "0 - No Rating Given"),
-    ("1", "1 - Stay Away"),
-    ("2", "2 - Subpar"),
-    ("3", "3 - OK"),
-    ("4", "4 - Good"),
-    ("5", "5 - Excellent"),
-    ]
-
-
 class ReviewForm(forms.ModelForm):
 
     class Meta:
         model = UserReview
-        review_rating = forms.CharField(label='Rating', widget=forms.Select(choices=ratings))
 
         exclude = ('user', 'date',)
 
@@ -36,7 +24,7 @@ class ReviewForm(forms.ModelForm):
             'product': 'product',
             'review_title': 'Review Title',
             'review_description': 'Product review here ...',
-            'review_rating': 'No Rating',
+            'review_rating': ''
         }
 
         self.fields['review_title'].widget.attrs['autofocus'] = True

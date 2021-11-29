@@ -1,108 +1,168 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Hotshots
 
-Welcome TJones305,
+####  A link to the live site is here: [Hotshots](https://inspirasong.herokuapp.com/) 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+ **This is a e-commerce type website enabling people to shop online for lawn bowls equipment.** 
+ **Users are able to add, edit and update their basket and pay for products**
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## User Experience (UX) User stories
 
-## Gitpod Reminders
+### As a user I want to ...
+- Be able to navigate the site easily
+- Be able to search for items on the site 
+- Be able to control and amend products I choose
+- Be able to view past orders 
+- Be able to register an account
+- Be able to read extra content that may help inform my purchasing
+- Be able to express my views about a product whether positive or negative to inform other users.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Design 
 
-`python3 -m http.server`
+### **Colour Scheme** 
+The colour scheme for this site was developed with assitancefrom the following site [coolors](https://coolors.co/).
+Starting off with Crimson (#D7263D) other complementary colours were suggested using the Cooloers generator, which aided the developer to settle on the following colours completing the scheme Misty Rose(#FFE3DC), Baby Pink(#DBB4AD), Dark Sienna(3B0D11), Black Coffee(#3A2D32) and Dark Liver(#4C4045). The most prodominent throughout the site colours are Crimson, Dark Sienna and Baby Pink.
 
-A blue button should appear to click: _Make Public_,
+### **Typography** 
+Two font styles were used on the site, courtesy of Google Fonts, the most predominant style was Pontano Sans with the fallback of sans-serif. The developer felt that this font style gave a clean and modern to the site. The Navbar brand has another style Cinzel Deorative with the fallback of cursive. This font was chosen as it appeals to the eye as a standout font, as well as having a stylish, modern look.
 
-Another blue button should appear to click: _Open Browser_.
+### **Imagery** 
+As a Bowls e-commerce store the developer felt it was important for there to be a consistent reminder of that throughout the site so starting from the landing page the user is welcomed by the image of a bowls green with some bowls by a jack. This image remains in the background and can been seen it parts through the site. 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### **Wireframes** 
 
-A blue button should appear to click: _Make Public_,
+1. Desktop
 
-Another blue button should appear to click: _Open Browser_.
+![Wireframe Desktop](/workspace/Hotshots/media/README_images/wireframe-hotshots-desktop.pdf "Wireframe Desktop")
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+2. Tablet
 
-To log into the Heroku toolbelt CLI:
+![Wireframe Tablet](/workspace/Hotshots/media/README_images/wireframe-hotshots-tablet.pdf "Wireframe Tablet")
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+3. Mobile
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+![Wireframe Mobile](/workspace/Hotshots/media/README_images/wireframe-hotshots-mobile.pdf "Wireframe Mobile")
 
-------
+### **Features**
+- Responsive on most devices sizes
+- Interactive elements (Burger menu (mobile devices only), sidenav, dropdown boxes on post creation, date pickers, collapsible on user profile, modal used to confirm post deletion, registarion and login)
 
-## Release History
+> ## Technologies Used 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### **Languages Used** 
+HTML5 
+CSS3
+JavaScript3
+Python3
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+### **Frameworks, Libraries & Programs Used** 
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- Materialize 1.0: Materialize was used to assist with the responsiveness and styling of the website. Specific features include - navbars, burger menu, date picker, modal, collapsible. 
+ 
+- Google Fonts: Google fonts was used to import the two fonts on the site into the style.css file. 
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- Font Awesome: Font Awesome was used on buttons to add icons for aesthetic and UX purposes. 
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- jQuery: jQuery came with Materialize to make the navbar responsive, along with the other features taken from Materialize. 
+ 
+- Git: Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub. 
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- GitHub: GitHub is used to store the projects code after being pushed from Git. 
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- Balsamiq: Balsamiq was used to produce wireframes during the design process.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- Heroku: Heroku was use as the platform to deploy the app.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- Django: Django was used to store the colections of the app.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+-Jinja: Jinja templating was used extensively throughout the site.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+> ## Testing 
+The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### **W3C Markup Validator**
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+![Markup Validator Report](/README_images/markup-validator.jpg "Markup Validator")
+    The Markup Validator highlighted 2 errors. 1 related to href attribute on h4, this was to apply Jinja on the brand logo so when 
+    clicked it took the user to the home page, however the developer has now removed this href. the other error relates to a div being a child of a ul.
+    The div was placed as such to enable the hero image to load onto the side nav, without it the sidebar was solid black. The developer has decided to
+    remove the image, despite it adding a professional touch. 
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### **W3C CSS Validator**  
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+![CSS Validator Report](/README_images/css-validator.jpg "CSS Validator")
+	The result of the CSS validator highlighted 3 errors. One error is part of Materialize's CDN. The other Two relate to the rainbow 
+    colour scheme created for the main title. The developer feels that this is a justified error to create a wow effect for the user. 
 
-------
+### **Lighthouse** 
+![Lighthouse Report Desktop](/README_images/lighthouse-desktop.jpg "Lighthouse Report Desktop")
+![Lighthouse Report Mobile](/README_images/lighthouse-mobile.jpg "Lighthouse Report Mobile")
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+> ## Testing User Stories from User Experience (UX) Section
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+##  *User Goals*  
+- ### Be able to navigate the site easily
 
-**How will this affect me?**
+- ### Be able to search for items on the site 
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+- ### Be able to control and amend products I choose
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- ### Be able to view past orders 
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+- ### Be able to register an account
 
-**So….?**
+- ### Be able to read extra content that may help inform my purchasing
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+- ### Be able to express my views about a product whether positive or negative to inform other users.
 
-**Can I opt out?**
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+## **Further Testing** 
+- The Website was tested on Google Chrome, Opera, Microsoft Edge and Safari browsers. 
+- The website was viewed on a variety of devices such as Desktop, Laptop, iPad Air & iPhoneX. Other devices were tested through the inspect web developer tools.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+##  **Known Bugs** 
+- 
 
-**Anything more?**
+> ## Deployment 
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+### **Heroku**  
+The project was deployed to Heroku using the following steps...
 
----
+1. Before you can deploy your app to Heroku, you need to initialize a local Git repository and commit your application code to it.
+2. The heroku create CLI command creates a new empty application on Heroku, along with an associated empty Git repository. If you run this command from your app’s root directory, the empty Heroku Git repository is automatically set as a remote for your local repository.
+3. You can use the git remote command to confirm that a remote named heroku has been set for your app
+4. To deploy your app to Heroku, you typically use the git push command to push the code from your local repository’s master or main branch to your heroku remote
+5. Use this same command whenever you want to deploy the latest committed version of your code to Heroku.
+6. Note that Heroku only deploys code that you push to master or main. Pushing code to another branch of the heroku remote has no effect. 
 
-Happy coding!
+### **Forking the GitHub Repository** 
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Log in to GitHub and locate the GitHub Repository 
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### **Making a Local Clone**  
+1. Log in to GitHub and locate the GitHub Repository Under the repository name, click "Clone or download". 
+2. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link. 
+3. Open Git Bash Change the current working directory to the location where you want the cloned directory to be made. 
+4. Type git clone, and then paste the URL you copied in Step 3. $ git clone https://github.com//TJones305/Hotshots Press Enter. 
+5. Your local clone will be created. $ git clone https://github.com//TJones305/Hotshots
+
+> ### *Credits*  
+
+- Bootstrap: Bootstrap Library used throughout the project to make site responsive using the Bootstrap Grid System and implementing the navbar.
+
+- MDN Web Docs: For Pattern Validation code.
+
+- Google Fonts: For use of their brilliant Fonts
+
+- Font Awesome: For use of their icons.
+
+- Content: All content was written by the developer.
+
+
+> ## Acknowledgements 
+- My Mentor Gerry McBride for constructive feedback and continuous support.
+
+- Student support at Code Institute for their helpful advice and guidance throughout the project.

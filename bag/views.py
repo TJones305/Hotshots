@@ -27,11 +27,13 @@ def add_to_bag(request, item_id):
             if size in bag[item_id]['items_by_size'].keys():
                 bag[item_id]['items_by_size'][size] += quantity
                 messages.success(request,
-                                 f'Updated {product.name} {size.upper()} Qty to {bag[item_id]["items_by_size"][size]}')
+                                 f'Updated {product.name} {size.upper()} Qty\
+                                    to {bag[item_id]["items_by_size"][size]}')
             else:
                 bag[item_id]['items_by_size'][size] = quantity
                 messages.success(request,
-                                 f'{product.name} {size.upper()} added to basket')
+                                 f'{product.name} {size.upper()}\
+                                     added to basket')
         else:
             bag[item_id] = {'items_by_size': {size: quantity}}
             messages.success(request,
@@ -64,13 +66,15 @@ def modify_bag(request, item_id):
         if quantity > 0:
             bag[item_id]['items_by_size'][size] = quantity
             messages.success(request,
-                             f'Updated {product.name} {size.upper()} Qty to {bag[item_id]["items_by_size"][size]}')
+                             f'Updated {product.name} {size.upper()} Qty\
+                                 to {bag[item_id]["items_by_size"][size]}')
         else:
             del bag[item_id]['items_by_size'][size]
             if not bag[item_id]['items_by_size']:
                 bag.pop(item_id)
                 messages.info(request,
-                              f'{product.name} {size.upper()} removed from basket')
+                              f'{product.name} {size.upper()}\
+                                  removed from basket')
     else:
         if quantity > 0:
             bag[item_id] = quantity
@@ -100,7 +104,8 @@ def remove_bag_item(request, item_id):
             if not bag[item_id]['items_by_size']:
                 bag.pop(item_id)
                 messages.info(request,
-                              f'{product.name} {size.upper()} removed from basket')
+                              f'{product.name} {size.upper()}\
+                                   removed from basket')
         else:
             bag.pop(item_id)
             messages.info(request,

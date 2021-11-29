@@ -53,11 +53,12 @@ def add_review(request, product_id):
 
 
 @login_required
-def edit_review(request, product_id, review_id):
+def edit_review(request, review_id):
     """Enables register user to edit a review"""
-    product = get_object_or_404(Product, pk=product_id)
     review = get_object_or_404(UserReview,
                                pk=review_id)
+    
+    print(review.product_id)
 
     if not request.user.is_superuser or request.user == review.user:
         messages.error(request, 'Whoops! did you get lost?,\
@@ -68,11 +69,12 @@ def edit_review(request, product_id, review_id):
         review_form = ReviewForm(request.POST, instance=review)
         if review_form.is_valid():
             r = review_form.save(commit=False)
+            r.product = review.product
             r.save()
             messages.success(request,
                              'Review edited!')
 
-            return redirect(reverse('product_detail', args=[product.id]))
+            return redirect(reverse('products'))
         else:
             messages.error(request, 'Oh no! There was an error.\
                             Please check the form is valid and resubmit')
@@ -97,7 +99,7 @@ def delete_review(request, review_id):
                        You do not have permissons access this area!')
         return redirect(reverse('home'))
 
-    review = get_object_or_404(UserReview, review_id)
+    review = get_object_or_404(UserReview,  pk=review_id)
     review.delete()
     messages.success(request, 'Review Deleted!')
 

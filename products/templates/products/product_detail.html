@@ -173,11 +173,8 @@
                 {% endif %}
                 <hr>
             </div>
-            {% for review in reviews %}
-                <h3 class="logo-font bg-black text-rose"><strong> {{ review.product.name }}</strong></h3>
-            {% endfor %}
-
-            {% include 'reviews/includes/product_review.html' %}
+        <h3 class="logo-font bg-black text-rose"><strong> {{ product.name }}</strong></h3>
+        {% include 'reviews/includes/product_review.html' %}
     </div>
 </div>
 {% endblock %}
