@@ -54,7 +54,68 @@ As a Bowls e-commerce store the developer felt it was important for there to be 
 
 ### **Models**
 
-![Models](url "Models")
+- ***Orders***
+- Order Number. ID - Char
+- User Profile. ID - links to User
+- Full Name. Char
+- Email. Email
+- Phone Number. Char
+- Country. Char
+- Postcode. Char
+- Town. Char
+- Address1. Char
+- Address2. Char
+- County. Char
+- Date. DateTime
+- Delivery. Dec
+- Order Total. Dec
+- Grand Total. Dec
+- Basket. Text
+- Stripe. Char
+
+- ***Order Items***
+- Order No. ID - links to Orders
+- Product. ID - links to Products
+- Product Size. Char
+- Quantity. Int
+- Lineitem Total. Dec
+
+- ***Products***
+- Catergory ID - links to Catergory
+- SKU. Char
+- Name. Char
+- Description. Text
+- Sizes. Boolean
+- Price. Deci
+- Rating. Deci
+- Image. Image
+- Image URL. URL
+
+- ***Reviews***
+- User. ID - links to review writer
+- Product. ID - links to product review is about
+- Date. DateTime
+- Title. Char
+- Description. Text
+- Rating. Integer
+
+- ***Profile***
+- User. ID - Links with Orders
+- Phone Number. Char 
+- Country. Char 
+- Postcode. Char 
+- Town. Char 
+- Address1. Char 
+- Address2. Char 
+- County. Char
+
+- ***Blog***
+- Blog ID 
+- User ID - links to Blog writer.
+- Title. Char
+- Date. DateTime
+- Description. Text
+- Verdict. Char
 
 ### **Features**
 - Responsive on most devices sizes
@@ -95,16 +156,13 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ### **W3C Markup Validator**
 
-![Markup Validator Report](media/README_images/markup-validator.jpg "Markup Validator")
-    The Markup Validator highlighted 2 errors. 1 related to href attribute on h4, this was to apply Jinja on the brand logo so when 
-    clicked it took the user to the home page, however the developer has now removed this href. the other error relates to a div being a child of a ul.
-    The div was placed as such to enable the hero image to load onto the side nav, without it the sidebar was solid black. The developer has decided to
-    remove the image, despite it adding a professional touch. 
+![Markup Validator Report](media/README_images/markup-hs.png "Markup Validator")
+    The Markup Validator highlighted 8 errors. Having reviewed the code the developer has not correct these errors as the duplicate id's are required for the navbar element to link together.
 
 ### **W3C CSS Validator**  
 
-![CSS Validator Report](media/README_images/css-validator.jpg "CSS Validator")
-	The result of the CSS validator highlighted 3 errors. One error is part of Materialize's CDN. The other Two relate to the rainbow 
+![CSS Validator Report](media/README_images/css-hs.png "CSS Validator")
+	The result of the CSS validator highlighted no errors. 
 
 ### **Lighthouse** 
 ![Lighthouse Report Desktop](media/README_images/lighthouse-report-hs-desktop.png "Lighthouse Report Desktop")
