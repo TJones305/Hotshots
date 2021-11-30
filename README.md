@@ -200,6 +200,6 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 
 
 > ## Acknowledgements 
-- My Mentor Gerry McBride for constructive feedback and continuous support.
+- My Mentor Gerry McBride for feedback and continuous support.
 
 - Student support at Code Institute for their advice and guidance throughout the project.
