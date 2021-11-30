@@ -107,8 +107,8 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 	The result of the CSS validator highlighted 3 errors. One error is part of Materialize's CDN. The other Two relate to the rainbow 
 
 ### **Lighthouse** 
-![Lighthouse Report Desktop](media/README_images/lighthouse-desktop.jpg "Lighthouse Report Desktop")
-![Lighthouse Report Mobile](media/README_images/lighthouse-mobile.jpg "Lighthouse Report Mobile")
+![Lighthouse Report Desktop](media/README_images/lighthouse-report-hs-desktop.png "Lighthouse Report Desktop")
+![Lighthouse Report Mobile](media/README_images/lighthouse-report-hs-mobile.png "Lighthouse Report Mobile")
 
 
 > ## Testing User Stories from User Experience (UX) Section

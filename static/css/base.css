@@ -60,7 +60,6 @@ hr {
 .main-logo-link {
     width: fit-content;
     font-family: 'Cinzel Decorative', cursive;
-    size: 70px;
     margin: 0px 5px;
 }
 
@@ -151,7 +150,7 @@ a.category-badge > span.badge:hover  {
 
 .border-rose {
     color:#f5dad5 !important;
-    border-style: solid 3px;
+    border-style: solid;
 }
 
 .pt-6 {
