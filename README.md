@@ -1,6 +1,6 @@
 # Hotshots
 
-####  A link to the live site is here: [Hotshots](https://inspirasong.herokuapp.com/) 
+####  A link to the live site is here: [Hotshots](https://hotshots.herokuapp.com/) 
 
  **This is a e-commerce type website enabling people to shop online for lawn bowls equipment.** 
  **Users are able to add, edit and update their basket and pay for products**
@@ -101,7 +101,6 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ![CSS Validator Report](media/README_images/css-validator.jpg "CSS Validator")
 	The result of the CSS validator highlighted 3 errors. One error is part of Materialize's CDN. The other Two relate to the rainbow 
-    colour scheme created for the main title. The developer feels that this is a justified error to create a wow effect for the user. 
 
 ### **Lighthouse** 
 ![Lighthouse Report Desktop](media/README_images/lighthouse-desktop.jpg "Lighthouse Report Desktop")
