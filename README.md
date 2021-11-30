@@ -52,6 +52,10 @@ As a Bowls e-commerce store the developer felt it was important for there to be 
 
 ![Wireframe Mobile](media/README_images/wireframe-hotshots-mobile.pdf "Wireframe Mobile")
 
+### **Models**
+
+![Models](url "Models")
+
 ### **Features**
 - Responsive on most devices sizes
 - Interactive elements
